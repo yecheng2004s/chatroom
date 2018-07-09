@@ -1,0 +1,38 @@
+<div id="app-login">
+    <div ng-controller="ResetController as vm">
+        <div class="container">
+            <div class="form-find row">
+                <form name="formReset" class="form-horizontal" ng-submit="vm.reset(formReset)" promise-btn novalidate>
+                    <div class="col-xs-9 col-md-9 col-xs-offset-1 col-md-offset-1">
+                        <div class="form-group has-feedback">
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            <input class="form-control" type="password" placeholder="Password" name="password" autofocus="autofocus" ng-required="true"
+                                ng-model="vm.password" ng-minlength="6" ng-maxlength="10" field-error="vm.isValid" />
+                        </div>
+                        <div class="form-group has-feedback">
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            <input class="form-control" type="password" placeholder="Re-enter Password" name="repassword" ng-required="true" ng-model="vm.repassword"
+                                field-error="vm.isValid" same-as="vm.password" />
+                        </div>
+                        <div class="form-group">
+                            <ul class="field-error" ng-if="vm.serverError !== ''">
+                                <li>{{vm.serverError}}</li>
+                            </ul>
+                            <button type="submit" class="btn btn-success btn-block">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            angular.element(document).ready(function () {
+                angular.bootstrap(document.getElementById("app-login"), ["app.login"]);
+            });
+            angular.module("app.login", ["config", "utilities", "ngAnimate", "angularPromiseButtons"]);
+        </script>
+
+        <script type="text/javascript" src="login/directives/validateDirective.js"></script>
+        <script type="text/javascript" src="login/controllers/resetController.js"></script>
+    </div>
+</div>

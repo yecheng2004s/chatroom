@@ -1,0 +1,26 @@
+<style>
+    .modal-header {
+        background-color:#f0f0f0;
+        border-radius: 6px 6px 0 0;
+    }
+    .modal-body {
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+</style>
+<div class="modal-header" style="padding:5px 10px;">
+    <button type="button" class="close" data-dismiss="modal" ng-click="vm.dismiss()" style="margin-top: 4px">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">Close</span>
+    </button>
+    <h5 class="modal-title" id="modal-title" style="margin-top: 4px">{{vm.title}}</h5>
+</div>
+<div class="modal-body" id="modal-body">
+    <div ng-if="vm.body">{{vm.body}}</div>
+    <ng-include ng-if="vm.bodyTemplateUrl" src="vm.bodyTemplateUrl"></ng-include>
+    <div style="color: red;">{{vm.contentError}}</div>
+</div>
+<div class="modal-footer" style="padding:5px 10px;">
+    <button class="btn btn-success" type="button" ng-click="vm.success($event)" promise-btn="vm.successPromise">{{vm.successText}}</button>
+    <button class="btn btn-default" type="button" ng-click="vm.cancel()">{{vm.cancelText}}</button>
+</div>

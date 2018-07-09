@@ -1,0 +1,67 @@
+<div id="app-chat" ng-controller="ChatController as vm" ng-init="vm.username = '<%= username%>';vm.nickname = '<%= nickname%>'">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <h4 class="title">ChatRoom System
+                <div>beta</div>
+            </h4>
+            <div class="title-user">
+                当前用户：<a ng-click="vm.settings()" href="javascript:;">{{vm.nickname}}</a> 当前在线：{{vm.online}} 人
+            </div>
+            <div class="title-exit">
+                <a ng-click="vm.logout()" href="/logout">退出</a>
+            </div>
+        </div>
+    </div>
+    <div class="content" scroll-bottom="vm.chatItems.length">
+        <div class="row" ng-repeat="item in vm.chatItems" ng-class="vm.setContentClass(item.type)">
+            <div message item="item" random="vm.random">
+                <!--<div class="face"><img src="face.png"></div>
+                <div class="nickname">勇闯</div>
+                <div class="bubble color align">
+                    <div class="plain">{{item.msg}}</div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <div class="row" id="rSend" send>
+                <div class="col-xs-offset-1 col-md-offset-1 col-md-9 col-xs-9">
+                    <input type="text" autofocus="autofocus" class="form-control" placeholder="请输入内容，按回车提交">
+                </div>
+                <div class="col-md-2 col-xs-2">
+                    <input type="button" class="btn btn-success" value="发送">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        angular.module("app.chat", ["app", "ui.uploader"]);
+        angular.element(document).ready(function () {
+            angular.bootstrap(document.getElementById("app-chat"), ["app.chat"]);
+        });
+    </script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="common/services/interceptor.js"></script>
+<script type="text/javascript" src="chat/services/chatService.js"></script>
+<script type="text/javascript" src="chat/filters/chatFilter.js"></script>
+<script type="text/javascript" src="chat/directives/chatDirective.js"></script>
+<script type="text/javascript" src="chat/directives/uploadDirective.js"></script>
+<script type="text/javascript" src="chat/controllers/chatController.js"></script>
+<script type="text/javascript" src="chat/controllers/settingsController.js"></script>
+
+<script type="text/ng-template" id="messageTemplate">
+    <div>
+        <div class="face"><img src="faces/{{item.name}}.png?r={{item.random}}"></div>
+        <div class="nickname">{{item.nickname}}</div>
+        <div class="bubble color align">
+            <div class="plain">{{item.msg}}</div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="enterLeaveTemplate">
+    <div>
+        <div>{{item.msg}}</div>
+    </div>
+</script>
+</div>

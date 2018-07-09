@@ -1,0 +1,24 @@
+<div ng-controller="SettingsController as vm" dw-loading="loading">
+    <form name="formSettings" class="form-horizontal" novalidate>
+        <div class="form-group">
+            <label class="col-xs-2 col-md-2 control-label">昵称</label>
+            <div class="col-xs-10 col-md-10">
+                <input class="form-control" type="text" name="nickname" autofocus="autofocus" ng-required="true" ng-model="vm.nickname"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-xs-2 col-md-2 control-label">头像</label>
+            <div class="col-xs-1 col-md-1">
+                <div upload>
+                    <img src="faces/{{vm.username}}.png?r={{vm.random}}" style="cursor: pointer">
+                    <input style="display: none" type="file" name="file" accept="image/jpg,image/jpeg,image/png,image/bmp,image/tiff"/>
+                </div>
+            </div>
+            <div class="col-xs-9 col-md-9">点击头像上传，支持格式：jpg,jpeg,png,bmp,tiff</div>
+        </div>
+        <div class="form-group" ng-if="vm.error" style="margin-bottom: 0px">
+            <div class="col-xs-2 col-md-2"></div>
+            <div class="col-xs-10 col-md-10" style="color: red;">{{vm.error}}</div>
+        </div>
+    </form>
+</div>

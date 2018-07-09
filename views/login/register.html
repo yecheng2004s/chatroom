@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="form row">
+        <form name="formLogin" class="form-horizontal col-xs-offset-2 col-md-offset-2" ng-submit="vm.register(formLogin)" promise-btn novalidate>
+            <div class="login-title">
+                <h3 class="form-title">ChatRoom System</h3>
+                <div class="login-title-sub">beta</div>
+            </div>
+            <div class="col-xs-9 col-md-9">
+                <div class="form-group has-feedback">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    <input class="form-control" type="text" placeholder="Username" name="username" autofocus="autofocus" ng-required="true" ng-model="vm.loginUser.name"
+                        ng-maxlength="20" field-error="vm.isValid" />
+                </div>
+                <div class="form-group has-feedback">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    <input class="form-control" type="password" placeholder="Password" name="password" ng-required="true" ng-model="vm.loginUser.password"
+                        ng-minlength="6" ng-maxlength="10" field-error="vm.isValid" />
+                </div>
+                <div class="form-group has-feedback">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    <input class="form-control" type="password" placeholder="Re-enter Password" name="repassword" ng-required="true" ng-model="vm.loginUser.repassword"
+                        field-error="vm.isValid" same-as="vm.loginUser.password" />
+                </div>
+                <div class="form-group has-feedback">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <input class="form-control" type="email" placeholder="Email" name="email" ng-required="true" ng-model="vm.loginUser.email"
+                        field-error="vm.isValid" />
+                </div>
+                <div class="row">
+                    <div class="col-xs-7 col-md-7">
+                        <div class="form-group has-feedback">
+                            <span class="glyphicon glyphicon-th form-control-feedback"></span>
+                            <input class="form-control" type="text" placeholder="Captcha" name="captcha" ng-required="true" ng-model="vm.loginUser.captcha"
+                                field-error="vm.isValid" />
+                        </div>
+                    </div>
+                    <div>
+                        <img captcha="vm.url" alt="captcha" class="form-img-captcha">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <a ui-sref="login">Login</a>
+                </div>
+                <div class="form-group">
+                    <ul class="field-error" ng-if="vm.serverError !== ''">
+                        <li>{{vm.serverError}}</li>
+                    </ul>
+                    <button type="submit" class="btn btn-success btn-block">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

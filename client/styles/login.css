@@ -1,0 +1,150 @@
+#app-login .form{
+    /*background: rgb(254, 219,187);*/
+    width:400px;
+    margin:100px auto;
+}
+#app-login .form-find{
+    width:400px;
+    margin:100px auto;
+}
+#app-login .form-img-captcha{
+    cursor: pointer
+}
+div.error{
+    color:red;
+    font-weight: bold
+}
+#app-login .field-error{
+    color:red;
+    padding-left:21px;
+    margin-bottom: 0px;
+}
+
+#app-login .login-title h3{
+    margin-bottom: 0px
+}
+#app-login .login-title div{
+    margin-bottom: 10px
+}
+
+#app-chat .title {
+    float: left;
+    margin-top: 10px;
+}
+#app-chat .title div {
+    font-size: 9pt;
+}
+#app-chat .title-user {
+    /*position: absolute;*/
+    /*float: right;*/
+    text-align: right;
+    margin-top: 10px;
+}
+#app-chat .title-exit {
+    text-align: right;
+}
+#rSend {
+    /*margin-top: 5px;*/
+}
+#rSend > div {
+    /*padding-right: 0px;*/
+    padding-left: 0px;
+    padding-right: 5px;
+}
+
+#app-chat .content {
+    background-color: #eee;
+    /*margin-top: 60px;
+    margin-bottom: 60px;*/
+    padding: 0px 50px;
+    top: 55px;
+    bottom: 50px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#app-chat .content .row {
+    margin-bottom: 10px;
+}
+
+#app-chat .navbar-default {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+#app-chat .content-enterleave {
+    text-align: center
+}
+
+#app-chat .content-you {
+
+}
+
+#app-chat .content-me {
+    text-align: right;
+}
+
+#app-chat .content-you .face {
+    float: left;
+}
+#app-chat .content-me .face {
+    float: right;
+}
+#app-chat .content .face img {
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+#app-chat .content-you .color {
+    background-color: #fff;
+}
+#app-chat .content-me .color {
+    background-color: #b2e281;
+}
+#app-chat .nickname {
+    font-size: 13px;
+    overflow: hidden;
+    padding: 0px 10px
+}
+#app-chat .bubble {
+    max-width: 500px;
+    min-height: 1em;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    margin: 0 10px;
+}
+#app-chat .bubble .plain {
+    padding: 9px 13px;
+}
+#app-chat .bubble:before, .bubble:after {
+    position: absolute;
+    top: 14px;
+    border: 6px solid transparent;
+    content: " ";
+}
+/*left*/
+#app-chat .content-you .align:before, .content-you .align:after {
+    right: 100%;
+}
+#app-chat .content-you .align:after {
+    border-right-color: #fff;
+    border-right-width: 4px;
+}
+/*right*/
+#app-chat .content-me .align:before, .content-me .align:after {
+    left: 100%;
+}
+#app-chat .content-me .align:after {
+    border-left-color: #b2e281;
+    border-left-width: 4px;
+}

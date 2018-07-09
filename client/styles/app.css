@@ -1,0 +1,32 @@
+body{
+    /*background:rgb(254, 219,187);*/
+    background-size:cover;
+    font-size: 13px;
+}
+
+a:focus {
+    outline: none;
+}
+
+form .has-feedback .form-control{
+    padding-right:10px;
+}
+form .has-feedback input[type="text"],form input[type="password"],form input[type="email"]{
+    padding-left:26px;
+}
+form .form-control-feedback{
+    left:0
+}
+
+.newline{
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/* override bootstrap style */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    color: #23527c;
+    background-color: #F0F0F0;
+}

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="form-find row">
+        <form name="formFind" class="form-horizontal" ng-submit="vm.find(formFind)" promise-btn novalidate>
+            <div class="col-xs-9 col-md-9 col-xs-offset-1 col-md-offset-1">
+                <div class="form-group has-feedback">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <input class="form-control" type="email" placeholder="Email" name="email" ng-required="true" ng-model="vm.email" field-error="vm.isValid"
+                    />
+                </div>
+                <div class="form-group">
+                    <a ui-sref="login">Login</a>
+                </div>
+                <div class="form-group">
+                    <ul class="field-error" ng-if="vm.serverError !== ''">
+                        <li>{{vm.serverError}}</li>
+                    </ul>
+                    <button type="submit" class="btn btn-success btn-block">Find Password</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
