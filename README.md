@@ -1,5 +1,5 @@
 # chatroom
 technology stack:<br/>
-front-end: Angularjs + Bootstrap<br/>
-back-end: nodejs + express<br/>
-database: Mongodb + redis<br/>
+front-end: AngularJS + Bootstrap<br/>
+back-end: Nodejs + Express<br/>
+database: Mongodb + Redis<br/>
